@@ -177,6 +177,7 @@ public class MicroSim extends Applet implements Constants {
 
     private Language lang;
 
+    @Override
     public void init() {
 
         lang = Language.getInstance();
@@ -668,6 +669,7 @@ public class MicroSim extends Applet implements Constants {
         return new Scrollbar(Scrollbar.HORIZONTAL, init, inc, min, max + (sbBroken ? inc : 0));
     }
 
+    @Override
     public boolean handleEvent(Event evt) {
         // System.out.println("MicroSim.handleEvent(evt): evt.target ="+evt.target);
         switch (evt.id) {
@@ -700,21 +702,21 @@ public class MicroSim extends Applet implements Constants {
                 }
             } else if (evt.target == sb_qIn2) {
                 int newval = sb_qIn2.getValue();
-                double q = ((double) (newval)) / 3600.0;
+                double q = ((newval)) / 3600.0;
                 if (q != qIn) {
                     qIn = q;
                     label_qIn2.setText(String.valueOf(newval) + str_vehperh);
                 }
             } else if (evt.target == sb_qIn3) {
                 int newval = sb_qIn3.getValue();
-                double q = ((double) (newval)) / 3600.0;
+                double q = ((newval)) / 3600.0;
                 if (q != qIn) {
                     qIn = q;
                     label_qIn3.setText(String.valueOf(newval) + str_vehperh);
                 }
             } else if (evt.target == sb_qRamp) {
                 int newval = sb_qRamp.getValue();
-                double q = ((double) (newval)) / 3600.0;
+                double q = ((newval)) / 3600.0;
                 if (q != qRamp) {
                     qRamp = q;
                     label_qRamp.setText(String.valueOf(newval) + str_vehperh);
@@ -876,6 +878,7 @@ public class MicroSim extends Applet implements Constants {
 
     // ###########################################################
 
+    @Override
     public boolean action(Event event, Object arg) {
         System.out.println("MicroSim.action(...)");
 
@@ -1100,6 +1103,7 @@ public class MicroSim extends Applet implements Constants {
     // end method action()
     // #####################################################
 
+    @Override
     public void start() {
         System.out.println("--------------------------------------------------");
         // TODO Spracheinstellungen und StartSzenario via parameter !! Arne
@@ -1127,11 +1131,13 @@ public class MicroSim extends Applet implements Constants {
         simCanvas.start(choice_Scen, density);
     }
 
+    @Override
     public void stop() {
         System.out.println("MicroSim.stop()");
         simCanvas.stop();
     }
 
+    @Override
     public void destroy() {
         stop();
     }

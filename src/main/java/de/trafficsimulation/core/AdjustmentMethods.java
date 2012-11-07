@@ -1,6 +1,5 @@
 package de.trafficsimulation.core;
 
-import java.awt.Font;
 import java.awt.GridBagConstraints;
 import java.awt.Insets;
 import java.awt.Label;
