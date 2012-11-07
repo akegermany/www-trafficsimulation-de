@@ -46,9 +46,9 @@ import de.trafficsimulation.core.Constants;
 import de.trafficsimulation.core.IDM;
 import de.trafficsimulation.core.IDMCar;
 import de.trafficsimulation.core.IDMTruck;
-import de.trafficsimulation.core.Language;
 import de.trafficsimulation.core.SimCanvas;
 import de.trafficsimulation.core.TextCanvas1;
+import de.trafficsimulation.language.Language;
 
 public class MicroSim extends Applet implements Constants {
 

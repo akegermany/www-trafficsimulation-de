@@ -32,6 +32,8 @@ import java.awt.Graphics;
 import java.awt.Image;
 import java.util.Vector;
 
+import de.trafficsimulation.language.Language;
+
 // !!! Units of variables with names *_m in meter, ALL others in pixels!
 
 // !!! pixel units: x: left->right; y: top->bottom!!

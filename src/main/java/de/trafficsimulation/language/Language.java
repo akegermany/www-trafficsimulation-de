@@ -22,7 +22,9 @@
  * 
  * ---------------------------------------------------------------------------------
  */
-package de.trafficsimulation.core;
+package de.trafficsimulation.language;
+
+import de.trafficsimulation.core.Constants;
 
 /*
  * Usage of special characters: Use the hexadecimal coding in the third column
