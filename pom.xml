@@ -1,0 +1,112 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>de.traffic-simulation</groupId>
+  <artifactId>www-trafficSimulation-de</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
+
+    <name>www-traffic-simulation-de</name>
+    <url>http://www.traffic-simulation.de</url>
+    <inceptionYear>2006</inceptionYear>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+  </properties>
+  
+   <licenses>
+        <license>
+            <name>GPLv3</name>
+            <url>http://www.gnu.org/licenses/gpl.html</url>
+        </license>
+    </licenses>
+    
+    <developers>
+     <developer>
+            <id>martinT</id>
+            <name>Martin Treiber</name>
+            <email>treiber@vwi.tu-dresden.de</email>
+            <url>http://www.mtreiber.de</url>
+            <roles>
+            <role>architect</role>
+            <role>developer</role>
+             </roles>
+
+            <organization>TU Dresden</organization>
+        </developer>
+        <developer>
+            <id>arne</id>
+            <name>Arne Kesting</name>
+            <roles>
+	        <role>admin</role>
+ 	    </roles>
+        </developer>
+    </developers>
+    
+      <scm>
+        <connection>scm:git:git@github.com:akegermany/www-traffic-simulation-de.git</connection>
+        <url>scm:git:git@github.com:akegermany/www-traffic-simulation-de.git</url>
+        <developerConnection>scm:git:git@github.com:akegermany/www-traffic-simulation-de.git</developerConnection>
+        <tag>HEAD</tag>
+    </scm>
+    
+    
+     <build>
+        <pluginManagement>
+            <plugins>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-compiler-plugin</artifactId>
+                    <version>2.5.1</version>
+ <configuration>
+          <source>1.6</source>
+          <target>1.6</target>
+        </configuration>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-jar-plugin</artifactId>
+                    <version>2.3.1</version>
+                </plugin>
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>2.2.1</version>
+                    <executions>
+                        <execution>
+                            <id>attach-sources</id>
+                            <goals>
+                                <goal>jar</goal>
+                            </goals>
+                        </execution>
+                    </executions>
+                </plugin>
+                 <!-- build executable jar with all dependencies -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-assembly-plugin</artifactId>
+                <!--  <version> </version> -->
+                <configuration>
+                    <descriptorRefs>
+                        <descriptorRef>jar-with-dependencies</descriptorRef>
+                    </descriptorRefs>
+                    <archive>
+                        <manifest>
+                            <mainClass>de.traffic-simulation.CoreMain</mainClass>
+                        </manifest>
+                    </archive>
+                </configuration>
+                <executions>
+                    <execution>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>single</goal>
+                        </goals>
+                    </execution>
+                </executions>
+                                </plugin>
+              </plugins>
+        </pluginManagement>
+    </build>
+</project>
